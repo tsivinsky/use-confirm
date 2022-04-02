@@ -1,25 +1,12 @@
 import esbuild from "esbuild";
-
-const watch = process.env.NODE_ENV === "development";
+import { nodeExternalsPlugin } from "esbuild-node-externals";
 
 esbuild.build({
-  entryPoints: ["src/index.ts"],
-  outfile: "dist/use-confirm.esm.js",
+  entryPoints: ["./src/index.ts"],
+  outfile: "./dist/index.esm.js",
   format: "esm",
   bundle: true,
   minify: true,
   sourcemap: true,
-  watch,
-});
-
-esbuild.build({
-  entryPoints: ["src/index.ts"],
-  outfile: "dist/use-confirm.cjs",
-  format: "cjs",
-  bundle: true,
-  minify: true,
-  sourcemap: true,
-  watch,
-  platform: "node",
-  target: "node17",
+  plugins: [nodeExternalsPlugin()],
 });
