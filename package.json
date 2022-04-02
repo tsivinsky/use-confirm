@@ -7,6 +7,17 @@
   "module": "./dist/use-confirm.esm.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
+  "author": {
+    "name": "Daniil Tsivinsky",
+    "url": "https://tsivinsky.com",
+    "email": "daniil@tsivinsky.com"
+  },
+  "keywords": [
+    "react",
+    "react-hooks",
+    "confirm",
+    "asynchronous"
+  ],
   "scripts": {
     "clean": "rimraf ./dist",
     "build:dev": "yarn clean && NODE_ENV=development node build.js",
