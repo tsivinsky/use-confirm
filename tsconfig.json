@@ -5,6 +5,7 @@
     "target": "ES6",
     "declaration": true,
     "declarationDir": "dist",
-    "jsx": "react"
+    "jsx": "react",
+    "outDir": "dist"
   }
 }

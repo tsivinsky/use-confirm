@@ -10,11 +10,7 @@ esbuild.build({
   bundle: true,
   minify: true,
   watch,
-  plugins: [
-    dtsPlugin({
-      outDir: "dist",
-    }),
-  ],
+  plugins: [dtsPlugin()],
 });
 
 esbuild.build({
@@ -26,5 +22,5 @@ esbuild.build({
   watch,
   platform: "node",
   target: "node17",
-  plugins: [dtsPlugin({ outDir: "dist" })],
+  plugins: [dtsPlugin()],
 });

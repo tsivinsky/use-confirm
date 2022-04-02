@@ -5,6 +5,7 @@
   "type": "module",
   "main": "./dist/use-confirm.cjs",
   "module": "./dist/use-confirm.esm.js",
+  "types": "./dist/index.d.ts",
   "license": "MIT",
   "scripts": {
     "clean": "rimraf ./dist",
