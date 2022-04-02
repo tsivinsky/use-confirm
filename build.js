@@ -8,6 +8,7 @@ esbuild.build({
   format: "esm",
   bundle: true,
   minify: true,
+  sourcemap: true,
   watch,
 });
 
@@ -17,6 +18,7 @@ esbuild.build({
   format: "cjs",
   bundle: true,
   minify: true,
+  sourcemap: true,
   watch,
   platform: "node",
   target: "node17",
