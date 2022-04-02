@@ -23,5 +23,14 @@
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17 || ^18"
-  }
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/use-confirm.cjs",
+      "import": "./dist/use-confirm.esm.js"
+    }
+  },
+  "files": [
+    "dist"
+  ]
 }
