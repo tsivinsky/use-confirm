@@ -1,5 +1,4 @@
 import esbuild from "esbuild";
-import { dtsPlugin } from "esbuild-plugin-d.ts";
 
 const watch = process.env.NODE_ENV === "development";
 
@@ -10,7 +9,6 @@ esbuild.build({
   bundle: true,
   minify: true,
   watch,
-  plugins: [dtsPlugin()],
 });
 
 esbuild.build({
@@ -22,5 +20,4 @@ esbuild.build({
   watch,
   platform: "node",
   target: "node17",
-  plugins: [dtsPlugin()],
 });
