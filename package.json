@@ -23,7 +23,7 @@
     "build:dev": "yarn clean && NODE_ENV=development node build.js",
     "build:prod": "yarn clean && NODE_ENV=production node build.js",
     "gen-types": "tsc --emitDeclarationOnly",
-    "prepublishOnly": "yarn build:prod"
+    "prepublishOnly": "yarn build:prod && yarn gen-types"
   },
   "devDependencies": {
     "@types/react": "^17.0.43",
