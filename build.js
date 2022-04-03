@@ -1,6 +1,5 @@
 import fs from "fs";
 import esbuild from "esbuild";
-import { nodeExternalsPlugin } from "esbuild-node-externals";
 
 const pkg = JSON.parse(fs.readFileSync("./package.json", "utf-8"));
 
@@ -11,7 +10,7 @@ esbuild.build({
   bundle: true,
   minify: true,
   sourcemap: true,
-  plugins: [nodeExternalsPlugin()],
+  external: ["react"],
 });
 
 esbuild.build({
@@ -21,5 +20,5 @@ esbuild.build({
   bundle: true,
   minify: true,
   sourcemap: true,
-  plugins: [nodeExternalsPlugin()],
+  external: ["react"],
 });
