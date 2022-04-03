@@ -23,7 +23,10 @@ export const useConfirm = () => {
 
   const isAsking = useMemo(() => message !== null, [message]);
 
-  const ask = async (msg: string, options: AskOptions = {}) => {
+  const ask = async (
+    msg: string,
+    options: AskOptions = {}
+  ): Promise<boolean> => {
     const { yesText, noText } = options;
 
     return new Promise((resolve) => {
