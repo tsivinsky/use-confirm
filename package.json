@@ -18,6 +18,12 @@
     "confirm",
     "asynchronous"
   ],
+  "repository": "github:tsivinsky/use-confirm",
+  "homepage": "https://github.com/tsivinsky/use-confirm#readme",
+  "bugs": {
+    "url": "https://github.com/tsivinsky/use-confirm/issues"
+  },
+  "packageManager": "yarn@1.22.18",
   "scripts": {
     "clean": "rimraf ./dist",
     "build:esbuild": "yarn clean && node build.js",
