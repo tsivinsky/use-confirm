@@ -39,3 +39,19 @@ export const ConfirmContextProvider: React.FC = ({ children }) => {
     </ConfirmContext.Provider>
   );
 };
+
+export const withConfirm = (Component: React.ComponentType) => {
+  return class extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+
+    render() {
+      return (
+        <ConfirmContextProvider>
+          <Component {...this.props} />
+        </ConfirmContextProvider>
+      );
+    }
+  };
+};

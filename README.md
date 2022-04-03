@@ -113,6 +113,29 @@ export default function App() {
 }
 ```
 
+### use withConfirm HOC
+
+Alternatively, you can use `withConfirm` HOC instead of wrapping your App with `ConfirmContextProvider` component.
+
+#### App.tsx
+
+```tsx
+import { withConfirm } from "use-confirm";
+
+const App = () => {
+  // you can easily use `useConfirm` functionaly here
+
+  return (
+    <div>
+      <h2>hello useConfirm</h2>
+    </div>
+  );
+};
+
+// all because of that line
+export default withConfirm(App);
+```
+
 #### Building
 
 ```bash
