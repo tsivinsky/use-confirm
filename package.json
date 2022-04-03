@@ -3,6 +3,7 @@
   "description": "asynchronous confirm function for React",
   "version": "0.0.8",
   "type": "module",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -37,7 +38,8 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/index.esm.js"
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs"
     }
   },
   "files": [
