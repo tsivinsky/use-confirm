@@ -20,6 +20,7 @@ npm i use-confirm
 
 - `useConfirm` - React hook;
 - `ConfirmContextProvider` - React context provider;
+- `withConfirm` - HOC for using instead of `ConfirmContextProvider`;
 
 ### A small preview
 
