@@ -21,6 +21,25 @@ npm i use-confirm
 - `useConfirm` - React hook;
 - `ConfirmContextProvider` - React context provider;
 
+### A small preview
+
+```tsx
+const Component = () => {
+  const { ask } = useConfirm();
+
+  const handle = async () => {
+    const ok = await ask("42?");
+    console.log(ok); // true || false
+  };
+
+  return (
+    <div>
+      <button onClick={handle}>click it</button>
+    </div>
+  );
+};
+```
+
 ### Example
 
 Code for that example you can find on [codesandbox](https://codesandbox.io/s/use-confirm-example-rvs5zs)
