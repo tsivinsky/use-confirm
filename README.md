@@ -23,6 +23,8 @@ npm i use-confirm
 
 ### A small preview
 
+[![Edit use-confirm-example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/use-confirm-example-rvs5zs?fontsize=14&hidenavigation=1&theme=dark)
+
 ```tsx
 const Component = () => {
   const { ask } = useConfirm();
