@@ -25,6 +25,7 @@
   },
   "packageManager": "yarn@1.22.18",
   "scripts": {
+    "prepare": "husky install",
     "clean": "rimraf ./dist",
     "format": "prettier -w .",
     "build:esbuild": "yarn clean && node build.js",
@@ -35,6 +36,7 @@
   "devDependencies": {
     "@types/react": "^17.0.43",
     "esbuild": "^0.14.30",
+    "husky": "^7.0.4",
     "prettier": "^2.6.2",
     "react": "^18.0.0",
     "rimraf": "^3.0.2",
