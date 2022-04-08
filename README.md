@@ -1,5 +1,9 @@
 # useConfirm
 
+useConfirm is alternative to JavaScript `confirm` function but with one exception. It allows you to use any React component as an alert.
+
+All you need is to wrap your React application (or a part of it) with `ConfirmContextProvider` component (or use `withConfirm` HOC), and after that, you can use `useConfirm` hook in your components.
+
 ## Install
 
 ##### yarn
