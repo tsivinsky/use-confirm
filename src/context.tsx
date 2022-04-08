@@ -14,12 +14,21 @@ export const ConfirmContext = React.createContext<ConfirmContextType | null>(
   null
 );
 
-export const ConfirmContextProvider: React.FC = ({ children }) => {
+export type ConfirmContextProviderProps = {
+  buttonsText?: ButtonsText;
+};
+
+export const ConfirmContextProvider: React.FC<ConfirmContextProviderProps> = ({
+  buttonsText: defaultButtonsText,
+  children,
+}) => {
   const [message, setMessage] = useState<string | null>(null);
-  const [buttonsText, setButtonsText] = useState<ButtonsText>({
-    yes: "Yes",
-    no: "No",
-  });
+  const [buttonsText, setButtonsText] = useState<ButtonsText>(
+    defaultButtonsText || {
+      yes: "Yes",
+      no: "No",
+    }
+  );
   const [resolve, setResolve] = useState<((value: boolean) => void) | null>(
     null
   );
@@ -40,7 +49,14 @@ export const ConfirmContextProvider: React.FC = ({ children }) => {
   );
 };
 
-export const withConfirm = (Component: React.ComponentType) => {
+export type WithConfirmOptions = {
+  buttonsText?: ButtonsText;
+};
+
+export const withConfirm = (
+  Component: React.ComponentType,
+  options?: WithConfirmOptions
+) => {
   return class extends React.Component {
     constructor(props) {
       super(props);
@@ -48,7 +64,7 @@ export const withConfirm = (Component: React.ComponentType) => {
 
     render() {
       return (
-        <ConfirmContextProvider>
+        <ConfirmContextProvider buttonsText={options.buttonsText}>
           <Component {...this.props} />
         </ConfirmContextProvider>
       );
