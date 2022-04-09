@@ -14,21 +14,22 @@ export const ConfirmContext = React.createContext<ConfirmContextType | null>(
   null
 );
 
+const initialButtonsText: ButtonsText = {
+  yes: "Yes",
+  no: "No",
+};
+
 export type ConfirmContextProviderProps = {
   buttonsText?: ButtonsText;
 };
 
 export const ConfirmContextProvider: React.FC<ConfirmContextProviderProps> = ({
-  buttonsText: defaultButtonsText,
+  buttonsText: defaultButtonsText = initialButtonsText,
   children,
 }) => {
   const [message, setMessage] = useState<string | null>(null);
-  const [buttonsText, setButtonsText] = useState<ButtonsText>(
-    defaultButtonsText || {
-      yes: "Yes",
-      no: "No",
-    }
-  );
+  const [buttonsText, setButtonsText] =
+    useState<ButtonsText>(defaultButtonsText);
   const [resolve, setResolve] = useState<((value: boolean) => void) | null>(
     null
   );
