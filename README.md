@@ -162,6 +162,25 @@ const App = () => {
 export default withConfirm(App);
 ```
 
+## API
+
+### ConfirmContextProvider
+
+You can change default buttons text. For that, you need to provide prop called `buttonsText` in `ConfirmContextProvider` with next signature.
+
+```typescript
+type ButtonsText = {
+  yes: "fuck yeah";
+  no: "bruh";
+};
+```
+
+If you use `withConfirm` HOC, you can add optional second argument like below.
+
+```typescript
+function withConfirm(App, { buttonsText: { yes: "fuck yeah", no: "nope" } });
+```
+
 #### Building
 
 ```bash
