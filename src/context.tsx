@@ -33,9 +33,11 @@ export type ConfirmContextProviderProps<T = {}> = {
   options?: T;
 };
 
-export const ConfirmContextProvider: React.FC<ConfirmContextProviderProps> = ({
+export const ConfirmContextProvider: React.FC<
+  React.PropsWithChildren<ConfirmContextProviderProps>
+> = ({
   buttonsText: defaultButtonsText = initialButtonsText,
-  options: defaultOptions = {},
+  options: defaultOptions,
   children,
 }) => {
   const [message, setMessage] = useState<string | null>(null);
