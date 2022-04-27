@@ -181,6 +181,40 @@ If you use `withConfirm` HOC, you can add optional second argument like below.
 function withConfirm(App, { buttonsText: { yes: "fuck yeah", no: "nope" } });
 ```
 
+### ask function
+
+```typescript
+function ask(msg: string, options?: AskOptions<T>): Promise<boolean>;
+```
+
+Wait, what's this `AskOptions<T>`?
+
+Here is a signature.
+
+```typescript
+type AskOptions<T> = Partial<T> & {
+  yesText?: string;
+  noText?: string;
+};
+```
+
+It allows you to customize yes and no texts in context on each call of ask function and pass custom options.
+
+If you're using TypeScript, you can pass generic type to useConfirm with extra ask options.
+
+```typescript
+type AskExtraOptions = {
+  status: "success" | "error" | "warning";
+};
+
+const { ask } = useConfirm<AskExtraOptions>();
+
+ask("you ok?", {
+  // now, you can use status here and have autocompletion :)
+  status: "success",
+});
+```
+
 #### Building
 
 ```bash

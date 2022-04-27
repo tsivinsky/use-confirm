@@ -1,17 +1,12 @@
-import { useContext, useMemo } from "react";
-import { ConfirmContext } from "./context";
+import { useMemo } from "react";
+import { useConfirmContext } from "./context";
 
-export type ButtonsText = {
-  yes: string;
-  no: string;
-};
-
-export type AskOptions = {
+export type AskOptions<T> = Partial<T> & {
   yesText?: string;
   noText?: string;
 };
 
-export const useConfirm = () => {
+export const useConfirm = <T = {}>() => {
   const {
     message,
     buttonsText,
@@ -19,15 +14,17 @@ export const useConfirm = () => {
     setButtonsText,
     resolve,
     setResolve,
-  } = useContext(ConfirmContext);
+    options,
+    setOptions,
+  } = useConfirmContext();
 
   const isAsking = useMemo(() => message !== null, [message]);
 
   const ask = async (
     msg: string,
-    options: AskOptions = {}
+    options?: AskOptions<T>
   ): Promise<boolean> => {
-    const { yesText, noText } = options;
+    const { yesText, noText, ...otherOptions } = options || {};
 
     return new Promise((resolve) => {
       setMessage(msg);
@@ -35,6 +32,7 @@ export const useConfirm = () => {
         yes: yesText || buttonsText.yes,
         no: noText || buttonsText.no,
       });
+      setOptions(otherOptions);
       setResolve(() => (value: boolean) => resolve(value));
     });
   };
@@ -42,11 +40,13 @@ export const useConfirm = () => {
   const confirm = () => {
     resolve?.(true);
     setMessage(null);
+    setOptions({});
   };
   const deny = () => {
     resolve?.(false);
     setMessage(null);
+    setOptions({});
   };
 
-  return { message, isAsking, buttonsText, ask, confirm, deny };
+  return { message, isAsking, buttonsText, options, ask, confirm, deny };
 };
