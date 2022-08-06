@@ -21,11 +21,13 @@ const initialButtonsText: ButtonsText = {
 
 export type ConfirmContextProviderProps = {
   buttonsText?: ButtonsText;
+  children?: React.ReactNode;
 };
 
-export const ConfirmContextProvider: React.FC<
-  React.PropsWithChildren<ConfirmContextProviderProps>
-> = ({ buttonsText: defaultButtonsText = initialButtonsText, children }) => {
+export const ConfirmContextProvider: React.FC<ConfirmContextProviderProps> = ({
+  buttonsText: defaultButtonsText = initialButtonsText,
+  children,
+}) => {
   const [message, setMessage] = useState<string | null>(null);
   const [buttonsText, setButtonsText] =
     useState<ButtonsText>(defaultButtonsText);
