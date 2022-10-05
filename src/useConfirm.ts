@@ -23,7 +23,7 @@ function useConfirm<TOptions = {}>(
       setMessage(msg);
       setResolve(() => (value: boolean) => resolve(value));
       if (_options) {
-        setOptions(_options);
+        setOptions({ ...options, ..._options });
       }
     });
   };
