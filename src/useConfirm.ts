@@ -17,7 +17,7 @@ function useConfirm<TOptions = {}>(
 
   const ask = async (
     msg: React.ReactNode,
-    _options: typeof options
+    _options?: typeof options
   ): Promise<boolean> => {
     return new Promise((resolve) => {
       setMessage(msg);
