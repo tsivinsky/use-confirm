@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 export type ConfirmContextType<TOptions = {}> = {
-  message: string | null;
+  message: React.ReactNode | null;
   resolve?: (value: boolean) => void;
   options?: TOptions;
   setOptions?: React.Dispatch<React.SetStateAction<TOptions>>;
-  setMessage?: React.Dispatch<React.SetStateAction<string | null>>;
+  setMessage?: React.Dispatch<React.SetStateAction<React.ReactNode | null>>;
   setResolve?: React.Dispatch<React.SetStateAction<(value: boolean) => void>>;
 };
 
@@ -35,7 +35,7 @@ function ConfirmContextProvider<TOptions = {}>({
   options: _options,
   children,
 }: ConfirmContextProviderProps<TOptions>) {
-  const [message, setMessage] = useState<string | null>(null);
+  const [message, setMessage] = useState<React.ReactNode | null>(null);
   const [options, setOptions] = useState<TOptions>(_options);
   const [resolve, setResolve] = useState<((value: boolean) => void) | null>(
     null

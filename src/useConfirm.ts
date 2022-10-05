@@ -16,7 +16,7 @@ function useConfirm<TOptions = {}>(
   const isAsking = useMemo(() => message !== null, [message]);
 
   const ask = async (
-    msg: string,
+    msg: React.ReactNode,
     _options: typeof options
   ): Promise<boolean> => {
     return new Promise((resolve) => {
