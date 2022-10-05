@@ -41,6 +41,8 @@ const Component = () => {
 };
 ```
 
+### [CodeSandbox](https://codesandbox.io/s/optimistic-mestorf-lx7tw2)
+
 1. Creating your own provider and hook
 
 First of all, create new .ts file and import `use-confirm` package.
