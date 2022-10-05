@@ -21,8 +21,10 @@ function useConfirm<TOptions = {}>(
   ): Promise<boolean> => {
     return new Promise((resolve) => {
       setMessage(msg);
-      setOptions(_options);
       setResolve(() => (value: boolean) => resolve(value));
+      if (_options) {
+        setOptions(_options);
+      }
     });
   };
 
