@@ -125,3 +125,7 @@ const Component = () => {
 ```bash
 yarn build
 ```
+
+## Credits
+
+- [Making a generic Context in React article](https://ordina-jworks.github.io/architecture/2021/02/12/react-generic-context.html) for giving me the idea to use factory
