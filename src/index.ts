@@ -1,2 +1,1 @@
-export * from "./useConfirm";
-export * from "./context";
+export { createConfirm } from "./factory";
