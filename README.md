@@ -128,4 +128,5 @@ yarn build
 
 ## Credits
 
+- [Article about making 1st version of this hook](https://medium.com/@jaredloson/a-replacement-for-window-confirm-using-promises-and-react-hooks-cfc011e76a7a). I took inspiration from it.
 - [Making a generic Context in React article](https://ordina-jworks.github.io/architecture/2021/02/12/react-generic-context.html) for giving me the idea to use factory
