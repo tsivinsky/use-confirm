@@ -13,7 +13,7 @@ export function createConfirm<TOptions = {}>(options?: TOptions) {
 
   const ConfirmContextProvider = createConfirmContextProvider<TOptions>(
     ConfirmContext,
-    options
+    options,
   );
 
   return {

@@ -15,7 +15,7 @@ export function createConfirmContext<TOptions = {}>() {
 
 export function createConfirmContextProvider<TOptions = {}>(
   ConfirmContext: React.Context<ConfirmContextType<TOptions>>,
-  options: TOptions
+  options: TOptions,
 ) {
   return ({ children }: { children?: React.ReactNode }) => (
     <ConfirmContextProvider ConfirmContext={ConfirmContext} options={options}>
@@ -38,7 +38,7 @@ function ConfirmContextProvider<TOptions = {}>({
   const [message, setMessage] = useState<React.ReactNode | null>(null);
   const [options, setOptions] = useState<TOptions>(_options);
   const [resolve, setResolve] = useState<((value: boolean) => void) | null>(
-    null
+    null,
   );
 
   return (

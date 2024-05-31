@@ -2,13 +2,13 @@ import { useContext, useMemo, Context } from "react";
 import { ConfirmContextType } from "./ConfirmContext";
 
 export function createUseConfirm<TOptions = {}>(
-  context: Context<ConfirmContextType<TOptions>>
+  context: Context<ConfirmContextType<TOptions>>,
 ) {
   return () => useConfirm<TOptions>(context);
 }
 
 function useConfirm<TOptions = {}>(
-  ConfirmContext: Context<ConfirmContextType<TOptions>>
+  ConfirmContext: Context<ConfirmContextType<TOptions>>,
 ) {
   const { message, setMessage, options, setOptions, resolve, setResolve } =
     useContext(ConfirmContext);
@@ -17,7 +17,7 @@ function useConfirm<TOptions = {}>(
 
   const ask = async (
     msg: React.ReactNode,
-    _options?: typeof options
+    _options?: typeof options,
   ): Promise<boolean> => {
     return new Promise((resolve) => {
       setMessage(msg);
